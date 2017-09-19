@@ -1,0 +1,16 @@
+<div class="wrapper">
+    <div class="header">
+        <div class="header__title indent">{{ title }}</div>
+        <ul class="nav">
+            <li class="nav__item"><a routerLink = "" class="nav__link">Main</a></li>
+            <li class="nav__item"><a routerLink = "/products" class="nav__link">Products(CRUD)</a></li>
+            <li class="nav__item"><a routerLink = "/artists" class="nav__link">Artists</a></li>
+            <li class="nav__item"><a routerLink = "/contact" class="nav__link">Contact</a></li>
+        </ul>
+    </div>
+    <div class="content">
+
+        <router-outlet></router-outlet>
+
+    </div>
+</div>

@@ -1,0 +1,43 @@
+<button class="button indent" (click)="showAddProductForm()">Add New Product</button>
+
+<form class="form indent" *ngIf="productForm">
+    <label class="form__label">Id<br>
+        <input type="text" name="id" class="form__input" [(ngModel)]="newProduct.id" >
+    </label>
+    <label class="form__label">Name<br>
+        <input type="text" name="name" class="form__input" [(ngModel)]="newProduct.name">
+    </label>
+    <label class="form__label">Description<br>
+        <input type="text" name="description" class="form__input" [(ngModel)]="newProduct.description">
+    </label>
+    <label class="form__label">Price<br>
+        <input type="text" name="price" class="form__input" [(ngModel)]="newProduct.price">
+    </label>
+    <button class="button" (click)="saveProduct(newProduct)">Save</button>
+    <button class="button">Clear</button>
+
+</form>
+
+<form class="form indent">
+    <input type="text" class="form__input" name="tern" [(ngModel)]="tern" placeholder="Search By Name" >
+</form>
+
+<table class="product indent">
+    <tr>
+        <td class="product__title">Id</td>
+        <td class="product__title">Name</td>
+        <td class="product__title">Description</td>
+        <td class="product__title">Price</td>
+        <td class="product__title"></td>
+    </tr>
+    <tr *ngFor="let product of products | filter: tern">
+        <td class="product__item">{{ product.id }}</td>
+        <td class="product__item">{{ product.name }}</td>
+        <td class="product__item">{{ product.description }}</td>
+        <td class="product__item">{{ product.price }}</td>
+        <td class="product__item">
+            <button class="button" (click)="showEditProductForm(product)">Edit</button>
+            <button class="button" (click)="removeProduct(product)">Delete</button>
+        </td>
+    </tr>
+</table>
