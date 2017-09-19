@@ -9,7 +9,7 @@ export class FilterPipe implements PipeTransform {
         if (tern === undefined) {
             return products;
         }
-        return products.filter(function(products) {
+        return products.filter(function(products: any) {
             return products.name.toLowerCase().includes(tern.toLowerCase());
         });
     }
