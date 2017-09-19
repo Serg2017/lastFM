@@ -1,17 +1,17 @@
 <h1 class="indent">Artists</h1>
 
 <form class="form indent">
-    <input type="text" name="artistName" class="form__input">
-    <button class="button">Send</button>
+    <input name="artistName" class="form__input" [(ngModel)] = "artistName">
+    <button class="button" (click)="getInfo()">Send</button>
 </form>
 
 <table class="artist indent" border="1">
     <tr>
         <td class="artist__title">Name</td>
-        <td class="artist__title"></td>
+        <td class="artist__title">IMG</td>
     </tr>
     <tr>
-        <td><a href="{{artistInfo.url}}" target="_blank">{{artistInfo.name}}</a></td>
-        <td></td>
+        <td><a href="{{artistInfo.url}}" target="_blank">{{ artistInfo.name }}</a></td>
+        <td><img *ngFor="let im of artistInfo.image" src="{{ im['#text'] }}" alt=""></td>
     </tr>
 </table>

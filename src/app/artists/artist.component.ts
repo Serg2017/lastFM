@@ -9,14 +9,16 @@ import {ArtistService} from './artist.service';
 
 export class ArtistComponent implements OnInit {
 
-    artistInfo = {};
+    artistInfo: any = {};
     artistName: string;
 
     constructor(private artistService: ArtistService) {}
-    ngOnInit(): void {
-        this.artistInfo = this.artistService.getInfoArtist('Cher').subscribe(
+    ngOnInit(): void {}
+
+    getInfo() {
+        this.artistInfo = this.artistService.getInfoArtist(this.artistName).subscribe(
             (data) => this.artistInfo = data.artist,
-            (data) => console.log(data.artist.image)
         );
     }
+
 }
