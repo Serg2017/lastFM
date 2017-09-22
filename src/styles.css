@@ -88,3 +88,23 @@
 .nav__link:hover {
   color: #FFF;
 }
+
+.left-img {
+  float: left;
+  margin: 0 10px 10px 0;
+}
+
+
+
+.text {
+  text-align: justify;
+}
+
+.clear:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+}

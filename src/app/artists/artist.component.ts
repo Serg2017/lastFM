@@ -13,6 +13,7 @@ export class ArtistComponent implements OnInit {
     artistName: string;
     name: string;
     image: string;
+    bio: string;
     form: any;
 
     constructor(private artistService: ArtistService) {}
@@ -22,6 +23,7 @@ export class ArtistComponent implements OnInit {
     setProperty() {
         this.name = this.artistInfo.name;
         this.image = this.artistInfo.image[2]['#text'];
+        this.bio = this.artistInfo.bio['content'];
     }
 
     getInfo() {

@@ -13,11 +13,15 @@ export class ArtistService {
     API_KEY: string = '90471296df5b2cc2d02093ab5295d5ff';
     SECRET: string = '2a88519b08db615337cee61048326aff';
 
+    info: any = {};
+
     constructor(private http: Http) {}
 
     getInfoArtist(artistName: string) {
-        return this.http.get('http://ws.audioscrobbler.com/2.0/?method=artist.getinfo&artist=' + artistName + '&api_key=' + this.API_KEY + '&format=json').map(
+        this.info = this.http.get('http://ws.audioscrobbler.com/2.0/?method=artist.getinfo&artist=' + artistName + '&api_key=' + this.API_KEY + '&format=json').map(
             res => res.json()
         );
+
+        return this.info;
     }
 }
